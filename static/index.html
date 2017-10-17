@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+   
+    <meta charset="utf-8">    
+    <base href="/">
+
+    <script src="vendor/angularjs/angular.min.js"></script>
+    <script src="vendor/angularjs/angular-route.js"></script>
+
+  </head>
+  <body>
+    <a href="/second">Show second</a>
+    <a href="/first">Show first</a>
+    <div ng-view></div>
+
+    
+
+    
+    <script>
+        var app = angular.module("myApp", ["ngRoute"]);
+        app.config(function($routeProvider, $locationProvider) {
+            $routeProvider
+            .when("/first", {
+                templateUrl : "static/first.html"
+            })
+            .when("/second", {
+                templateUrl : "static/second.html"
+            })     
+
+            $locationProvider.html5Mode(true);                   
+        });
+    </script>
+
+  </body>
+</html>

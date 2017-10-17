@@ -1,36 +1,29 @@
 <!doctype html>
-<html ng-app="myApp">
-  <head>
-   
-    <meta charset="utf-8">    
-    <base href="/">
+<html ng-app="demoapp">
+    <head>
+        <meta charset="utf-8">    
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <base href="/">
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    </head>
 
-    <script src="vendor/angularjs/angular.min.js"></script>
-    <script src="vendor/angularjs/angular-route.js"></script>
+    <body>        
 
-  </head>
-  <body>
-    <a href="/second">Show second</a>
-    <a href="/first">Show first</a>
-    <div ng-view></div>
+        <div ng-view></div>
 
-    
+        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/angularjs/angular.min.js"></script>
+        <script src="vendor/angularjs/angular-route.js"></script>
 
-    
-    <script>
-        var app = angular.module("myApp", ["ngRoute"]);
-        app.config(function($routeProvider, $locationProvider) {
-            $routeProvider
-            .when("/first", {
-                templateUrl : "static/first.html"
-            })
-            .when("/second", {
-                templateUrl : "static/second.html"
-            })     
+        <script src="static/module.js"></script>                
+        <script src="static/routes.js"></script>        
+        <script src="static/controller.js"></script>
 
-            $locationProvider.html5Mode(true);                   
-        });
-    </script>
+        
+        
 
-  </body>
+    </body>
 </html>

@@ -1,0 +1,12 @@
+
+<div class="container">
+    <h1>Rest API Example</h1>
+
+    <p>Click the button to invoke the API</p>
+    <a class="btn btn-info" role="button" ng-click="invokeAPI();">Test API</a>
+
+    <div ng-hide="result == null">
+        <hr>
+        <p>First name is <b>{{result.first}}</b>, last name is <b>{{result.last}}</b></p>
+    </div>
+</div>

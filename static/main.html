@@ -1,12 +1,28 @@
-
 <div class="container">
-    <h1>Rest API Example</h1>
+    <h2>AngularJS / Python REST example</h2>
 
-    <p>Click the button to invoke the API</p>
-    <a class="btn btn-info" role="button" ng-click="invokeAPI();">Test API</a>
+    <!-- Form calls greet() of associated controller. Fields are bound to controller model
+    variables through ng-model. -->
+    <div class="row">
+        <div class="col-lg-6">
+            <p>This page will invoke the backend's exposed REST API. Enter a name below and click <tt>Greet</tt>.</p>
+            <form ng-submit="greet();">
+                <div class="form-group">
+                    <label for="name">Your name</label>
+                    <input type="text" class="form-control" ng-model="name" id="name" aria-describedby="nameHelp" placeholder="Your name here">
+                    <small id="nameHelp" class="form-text text-muted">Backend needs a name to greet.</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Greet</button>
+            </form>
+        </div>
+    </div>
 
-    <div ng-hide="result == null">
-        <hr>
-        <p>First name is <b>{{result.first}}</b>, last name is <b>{{result.last}}</b></p>
+    <!-- Backend result. -->
+    <div class="row" ng-hide="message == null">
+        <div class="col-lg-6">
+            <hr>
+            <p>Backend responded with</p>
+            <pre>{{message}}</pre>
+        </div>
     </div>
 </div>

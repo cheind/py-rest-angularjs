@@ -7,6 +7,8 @@ The web application consists of a static file serving part (to deliver AngularJS
 
 ![](etc/app.png)
 
+Code is written for Python 3.5+ and AngularJS 1.6.
+
 ### Backend running `flask`
 
 To run the flask based app make sure to have `flask` installed
